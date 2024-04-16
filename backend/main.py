@@ -173,7 +173,7 @@ class Meal(Resource):
     
 class RecipeInformation(Resource):
     def get(self, recipe_id):
-        api_key = '7cf220e1b1c047ca8b38c1c4d2e1eea7'  # Replace with your actual API key
+        api_key = '5677eb075e0a401a92152e7939d01d2b'  # Replace with your actual API key
 
         url = f'https://api.spoonacular.com/recipes/{recipe_id}/information'
         params = {
