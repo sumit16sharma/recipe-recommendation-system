@@ -89,8 +89,15 @@ The Recipe Recommendation System provides curated meal categories like desserts,
    ```bash
     cd recipe-recommendation-system
     ```
+
+4. Create a .env File in the backend repo and add credentials which I shared over the mail
+
+   ```bash
+    AWS_ACCESS_KEY_ID=XXXXXXX
+    AWS_SECRET_ACCESS_KEY=XXXXXXXX
+    ```
   
-4. Start Docker Compose:
+6. Start Docker Compose:
 
     ```bash
     docker-compose up
