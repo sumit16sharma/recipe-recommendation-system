@@ -9,6 +9,7 @@ The Recipe Recommendation System provides curated meal categories like desserts,
 - [Functionality Overview](#functionality-overview)
 - [Algorithm for Recommendation](#algo)
 - [Working of Application](#working)
+- [Video Explanation](#video)
 - [Installation](#installation)
 - [Dependencies](#dependency)
 
@@ -72,6 +73,9 @@ The Recipe Recommendation System provides curated meal categories like desserts,
 
   ![backtosnak](https://github.com/sumit16sharma/recipe-recommendation-system/assets/73477380/0a4e5310-3662-49be-be2a-1c60fad836dd)
 
+## Video Explanation <a name="video">
+https://github.com/sumit16sharma/recipe-recommendation-system/assets/73477380/7f1f1a08-a272-4865-a615-8ca0a2206ecd
+
 ## Installation <a name="installation"></a>
 
 1. Check Docker Installation:
@@ -111,4 +115,6 @@ Note: Docker Compose up may take 3-4 minutes for setting up containers and launc
 <a href="https://nodejs.org/"><img src="https://github.com/sumit16sharma/recipe-recommendation-system/assets/73477380/650bc697-d02a-47f2-b6d5-452ef4d32791" alt="Python" width="50" height="50"></a>
 
 
-   
+
+
+
