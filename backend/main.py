@@ -193,4 +193,4 @@ api.add_resource(Meal, '/meal/<string:meal_type>')
 api.add_resource(RecipeInformation, '/recipes/<int:recipe_id>/information')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
