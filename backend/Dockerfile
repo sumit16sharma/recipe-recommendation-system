@@ -1,23 +1,26 @@
-# Use the official Python image as base
-FROM python:3.8-slim-buster
+# Use the official Node.js image as the base image
+FROM node:18-alpine
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the requirements file into the container at /app
-COPY requirements.txt .
+# Copy the package.json and package-lock.json (or yarn.lock) files
+COPY package*.json ./
 
-# Install the required dependencies
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN npm install
 
-# Copy the current directory contents into the container at /app
-COPY . .
+# Copy the rest of the application code
+COPY . /app
 
-# Set the FLASK_APP environment variable to point to main.py
-ENV FLASK_APP=main.py
+# Build the React app
+RUN npm run build
 
-# Expose port 5000 to allow communication to/from server
-EXPOSE 5000
+# Set the environment to production
+ENV NODE_ENV=production
 
-# Run the Flask application
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Expose the port the app will run on
+EXPOSE 3000
+
+# Start the app
+CMD ["npm", "start"]

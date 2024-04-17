@@ -1,13 +1,11 @@
 version: '3'
 
 services:
-  app:
+  frontend:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "3000:3000"
     environment:
-      FLASK_APP: main.py
-    volumes:
-      - .:/app
+      NODE_ENV: production
