@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from flask_restful import Api, Resource, reqparse
 from boto3.dynamodb.conditions import Attr
 from recommendation import recommend_items
@@ -14,7 +14,7 @@ from uploadToAws import uploadToAws
 
 app = Flask(__name__)
 api = Api(app)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Load environment variables from .env
 load_dotenv()
@@ -191,6 +191,13 @@ class RecipeInformation(Resource):
 api.add_resource(ClickedItem, '/clicked/<string:item_id>')
 api.add_resource(Meal, '/meal/<string:meal_type>')
 api.add_resource(RecipeInformation, '/recipes/<int:recipe_id>/information')
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
