@@ -50,7 +50,7 @@ const MealInformation = () => {
         onClick={handleGoBack}
         className="absolute top-4 right-4 bg-white hover:bg-gray-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-gray-300"
       >
-        Go Back
+        More Suggestions
     </button>
     <h1 className="text-3xl font-bold mb-4">{title}</h1>
     <p className="text-gray-300 mb-2">Ready in: {readyInMinutes} minutes</p>
